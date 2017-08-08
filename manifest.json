@@ -1,0 +1,16 @@
+{
+  "name": "Document Scanning",
+  "description": "Web browser based document scanning using Dynamic Web TWAIN.",
+  "version": "1.0",
+  "manifest_version": 2,
+  "app": {
+    "background": {
+      "scripts": ["background.js"]
+    }
+  },
+  "icons": {
+    "16": "dwt-16px.png",
+    "128": "dwt-128px.png"
+  },
+  "permissions": ["webview"]
+}
