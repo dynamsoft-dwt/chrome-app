@@ -7,9 +7,9 @@ version = parseInt(version);
 var isFocusedSupported = version >= 33;
 
 $ =
-    function(selector) {
-  return document.querySelector(selector);
-}
+  function (selector) {
+    return document.querySelector(selector);
+  }
 
 function createNewWindow(optionsDictionary) {
   optionsDictionary = optionsDictionary || {};
@@ -21,9 +21,9 @@ function createNewWindow(optionsDictionary) {
 
   var innerBounds = chrome.app.window.current().innerBounds;
   innerBounds.left =
-      (innerBounds.left + newWindowOffset) % (screen.width - innerBounds.width);
+    (innerBounds.left + newWindowOffset) % (screen.width - innerBounds.width);
   innerBounds.top = (innerBounds.top + newWindowOffset) %
-                    (screen.height - innerBounds.height);
+    (screen.height - innerBounds.height);
   optionsDictionary.innerBounds = {};
   optionsDictionary.innerBounds.left = 50;
   optionsDictionary.innerBounds.top = 50;
@@ -31,9 +31,9 @@ function createNewWindow(optionsDictionary) {
   optionsDictionary.innerBounds.height = screen.height - 100;
 
   chrome.app.window.create(
-      'webview.html', optionsDictionary, function(win) { win.show(); });
+    'webview.html', optionsDictionary, function (win) { win.show(); });
 };
 
-$('#viewer').onclick = function(e) {
+$('#viewer').onclick = function (e) {
   createNewWindow();
 };
